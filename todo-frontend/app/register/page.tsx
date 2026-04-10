@@ -38,7 +38,7 @@ export default function Register() {
     try {
       setLoading(true);
 
-      await axios.post("http://localhost:5000/auth/register", {
+      await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/auth/register`, {
         ...form,
         age: Number(form.age),
       });
